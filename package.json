@@ -2,8 +2,9 @@
   "name": "hapi-plugin-registry",
   "version": "1.0.0",
   "description": "Registry to aggregate Hapi plugins",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "style": "jshint --reporter node_modules/jshint-stylish/stylish.js src/ && jscs src/"
   },
@@ -22,9 +23,11 @@
   },
   "homepage": "https://github.com/pon/hapi-plugin-registry",
   "devDependencies": {
-    "jshint-stylish": "^1.0.1"
+    "jshint-stylish": "^1.0.1",
+    "nodemon": "^1.3.7"
   },
   "dependencies": {
-    "hapi": "^8.4.0"
+    "hapi": "^8.4.0",
+    "nconf": "^0.7.1"
   }
 }
