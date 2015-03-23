@@ -1,6 +1,18 @@
 var Hapi = require('hapi');
 
 var server = new Hapi.Server();
-server.connection({ port: '3000' });
+
+server.register([
+  require('./plugins/config')
+], function (err) {
+  if (err) {
+   throw err;
+  }
+});
+
+server.connection({
+  port: server.plugins.config.port,
+  labels: ['http']
+});
 
 server.start();

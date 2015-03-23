@@ -2,6 +2,7 @@
 
 exports.register = function (server, options, next) {
 
+  server.expose(require('./' + process.env.NODE_ENV + '.json'));
   next();
 };
 
